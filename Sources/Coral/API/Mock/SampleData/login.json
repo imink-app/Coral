@@ -1,0 +1,44 @@
+{
+    "status": 0,
+    "result": {
+        "user": {
+            "id": 5082342477529088,
+            "nsaId": "7fe00be17013c5cb",
+            "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/8ce152b7e775dad1",
+            "name": "♪Jone",
+            "supportId": "0921-4377-9004-7592-5963-2",
+            "isChildRestricted": false,
+            "etag": "\"e42fde3cdb03936c\"",
+            "links": {
+                "nintendoAccount": {
+                    "membership": {
+                        "active": true
+                    }
+                },
+                "friendCode": {
+                    "regenerable": true,
+                    "regenerableAt": 1498798182,
+                    "id": "7779-8151-4794"
+                }
+            },
+            "permissions": {
+                "presence": "SELF"
+            },
+            "presence": {
+                "state": "OFFLINE",
+                "updatedAt": 0,
+                "logoutAt": 0,
+                "game": {}
+            }
+        },
+        "webApiServerCredential": {
+            "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsIm1lbWJlcnNoaXAiOnsiYWN0aXZlIjp0cnVlfSwiYXVkIjoiZjQxN2UxdGlianFkOTFjaDk5dTQ5aXd6NXNuOWNoeTMiLCJleHAiOjE2NjA3OTc0NjEsImlhdCI6MTY2MDc5MDI2MSwiaXNzIjoiYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldCIsInN1YiI6NTA4MjM0MjQ3NzUyOTA4OCwidHlwIjoiaWRfdG9rZW4ifQ.dvnyD1VErTINIwiJsi-HjnRyJiJNrW4aT7Au9zTcnZ8",
+            "expiresIn": 7200
+        },
+        "firebaseCredential": {
+            "accessToken": "",
+            "expiresIn": 3600
+        }
+    },
+    "correlationId": "49fd050d-2f585647"
+}

@@ -1,0 +1,63 @@
+{
+    "language": "zh-TW",
+    "nickname": "Jone Wang",
+    "clientFriendsOptedInUpdatedAt": 1496206130,
+    "gender": "male",
+    "country": "US",
+    "analyticsPermissions": {
+        "internalAnalysis": {
+            "updatedAt": 1496207493,
+            "permitted": true
+        },
+        "targetMarketing": {
+            "permitted": true,
+            "updatedAt": 1496207493
+        }
+    },
+    "clientFriendsOptedIn": true,
+    "mii": {
+        "etag": "6b096e04d559e1988ec822fd78c2f720a4669c1c",
+        "id": "665839cbc1f659ef",
+        "imageOrigin": "cdn-mii.accounts.nintendo.com",
+        "clientId": "1cfe3a55ed8924d9",
+        "updatedAt": 1537263876,
+        "type": "profile",
+        "storeData": {
+            "3": "AwAAQNqW/fyzIXXGd50UhDDmTQsx1wAAAABNAGkAaQAAAAAAAAAAAAAAAAAAAEBAAAAhAQJoRBgmNEYUgRIXaA0AACkAUkhQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPIM"
+        },
+        "favoriteColor": "red",
+        "coreData": {
+            "4": "IUBAAQgBEwgIAheMBgFpbYpqghQAAAAgZHJERE0AaQBpAAAAAAAAAAAAAAAAAAAA"
+        },
+        "imageUriTemplate": "https://{imageOrigin}/2.0.0/mii_images{/id}{/etag}.{format}{?type,expression,width,bgColor,clothesColor,cameraXRotate,cameraYRotate,cameraZRotate,characterXRotate,characterYRotate,characterZRotate,lightXDirection,lightYDirection,lightZDirection,lightDirectionMode,splitDepthOffset,splitMode,instanceCount,instanceRotationMode}"
+    },
+    "region": null,
+    "eachEmailOptedIn": {
+        "deals": {
+            "updatedAt": 1496206130,
+            "optedIn": true
+        },
+        "survey": {
+            "updatedAt": 1496206130,
+            "optedIn": true
+        }
+    },
+    "updatedAt": 1640531545,
+    "createdAt": 1496206130,
+    "analyticsOptedIn": true,
+    "emailOptedIn": true,
+    "id": "411e9b19058e084e",
+    "analyticsOptedInUpdatedAt": 1496207493,
+    "emailOptedInUpdatedAt": 1496206130,
+    "candidateMiis": [],
+    "timezone": {
+        "utcOffsetSeconds": -14400,
+        "name": "America/New_York",
+        "id": "America/New_York",
+        "utcOffset": "-04:00"
+    },
+    "screenName": "i•••@j••••",
+    "emailVerified": true,
+    "isChild": false,
+    "birthday": "1991-01-21"
+}

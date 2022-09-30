@@ -1,0 +1,1460 @@
+{
+    "status": 0,
+    "result": {
+        "friends": [
+            {
+                "id": 6744577963982848,
+                "nsaId": "84269087ff76a59a",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/3c6c2c9c09ff40fb",
+                "name": "ddddxxx",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1568642327,
+                "presence": {
+                    "state": "ONLINE",
+                    "updatedAt": 1664351556,
+                    "logoutAt": 1664351535,
+                    "game": {
+                        "name": "Splatoon 3",
+                        "imageUri": "https://atum-img-lp1.cdn.nintendo.net/i/c/b61c1886195c430ebcf5d17255ceb509_512",
+                        "shopUri": "https://ec.nintendo.com/apps/0100c2500fc20000/US?lang=cnZh",
+                        "totalPlayTime": 7721,
+                        "firstPlayedAt": 1662649380,
+                        "sysDescription": ""
+                    }
+                }
+            },
+            {
+                "id": 5944572515516416,
+                "nsaId": "568a059453883e25",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/3aa46275cbf519b9",
+                "name": "Yamna",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1586496734,
+                "presence": {
+                    "state": "ONLINE",
+                    "updatedAt": 1664350992,
+                    "logoutAt": 1664336404,
+                    "game": {
+                        "name": "Xenoblade Chronicles 3",
+                        "imageUri": "https://atum-img-lp1.cdn.nintendo.net/i/c/e80cbf9bd0dd4bc88a821295b6f8c210_512",
+                        "shopUri": "https://ec.nintendo.com/apps/010074f013262000/US?lang=cnZh",
+                        "totalPlayTime": 2123,
+                        "firstPlayedAt": 1659802020,
+                        "sysDescription": ""
+                    }
+                }
+            },
+            {
+                "id": 4582126158610432,
+                "nsaId": "735ce8db517c4766",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/83825551b92b83fc",
+                "name": "momo",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1580989340,
+                "presence": {
+                    "state": "ONLINE",
+                    "updatedAt": 1664352442,
+                    "logoutAt": 1664291247,
+                    "game": {
+                        "name": "Splatoon 3",
+                        "imageUri": "https://atum-img-lp1.cdn.nintendo.net/i/c/b61c1886195c430ebcf5d17255ceb509_512",
+                        "shopUri": "https://ec.nintendo.com/apps/0100c2500fc20000/US?lang=cnZh",
+                        "totalPlayTime": 3108,
+                        "firstPlayedAt": 1662817680,
+                        "sysDescription": ""
+                    }
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "2303a530684b5bb4",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/8d9eed5006ba1e6d",
+                "name": "ink boy",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1548339576,
+                "presence": {
+                    "state": "ONLINE",
+                    "updatedAt": 1664352210,
+                    "logoutAt": 1662798711,
+                    "game": {
+                        "name": "LEGO\u00ae Worlds",
+                        "imageUri": "https://atum-img-lp1.cdn.nintendo.net/i/c/9ebb2bdfa73b4a2694d50af958370e65_512",
+                        "shopUri": "https://ec.nintendo.com/apps/0100838002aea000/US?lang=cnZh",
+                        "totalPlayTime": 10850,
+                        "firstPlayedAt": 1514238060,
+                        "sysDescription": ""
+                    }
+                }
+            },
+            {
+                "id": 5184488201650176,
+                "nsaId": "a6bb9364d842f2a8",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/d05be8d92b370e12",
+                "name": "ER.4",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1593779608,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664353123,
+                    "logoutAt": 1664353123,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5224381444718592,
+                "nsaId": "a00930bfd6f67f90",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/e63f5acfb254421d",
+                "name": "toru",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1585144558,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664353266,
+                    "logoutAt": 1664347741,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5333605345001472,
+                "nsaId": "0e2cc11715ccc8bb",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/ec708ec3e6ba3d76",
+                "name": "Seolhee\u266a",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1527527180,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664344488,
+                    "logoutAt": 1664343539,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4663476287897600,
+                "nsaId": "de5820e6a7c8af42",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/2ed0afadefcef8ef",
+                "name": "\u30de\u30a4\u30af",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1613888375,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664341972,
+                    "logoutAt": 1664341892,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5149061917442048,
+                "nsaId": "38a1406c75e6c793",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/bb3065c76c0359df",
+                "name": "Luigi",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1602256242,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664337199,
+                    "logoutAt": 1664333080,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4772930547875840,
+                "nsaId": "56167f514c47a521",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/4e0b307cc8ff086a",
+                "name": "\u3042\uff5e[np\u010b]",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1584615913,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664310815,
+                    "logoutAt": 1664307703,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5832271748136960,
+                "nsaId": "ab67e6877b9e391a",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/c72c69750977e20c",
+                "name": "ku\u012bq\u00ecan.RS",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1603629343,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664294978,
+                    "logoutAt": 1664294881,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6587704531746816,
+                "nsaId": "bec0d72141d6c41d",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/85eb19d6d7044b5e",
+                "name": "Tommy",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1613734827,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664294526,
+                    "logoutAt": 1664294526,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5035010615181312,
+                "nsaId": "b96832cc050b8499",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/45f6ddae1054ff11",
+                "name": "ddddyyy",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1587905921,
+                "presence": {
+                    "state": "INACTIVE",
+                    "updatedAt": 1664351558,
+                    "logoutAt": 1664288278,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4614249997402112,
+                "nsaId": "32a8d16e841da197",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/89e2c0a864ba7e7a",
+                "name": "TreeHaha",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1509337306,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664287373,
+                    "logoutAt": 1664287373,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4893042268700672,
+                "nsaId": "62f43606f9c7d7e7",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/b2da4a7b1a002b8a",
+                "name": "idealhack",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1563891169,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664208824,
+                    "logoutAt": 1664208824,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6194869286469632,
+                "nsaId": "7bbb594f85260c59",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/47a4bc542fc4c4e9",
+                "name": "momoko\u00a9",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1515949341,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664200994,
+                    "logoutAt": 1664200980,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6698281014919168,
+                "nsaId": "4fce590c78c26b51",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/8420024deafeeb4a",
+                "name": "L1ng",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1615300927,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664199371,
+                    "logoutAt": 1664199371,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5353053711499264,
+                "nsaId": "0f2b81e178763768",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/c4f43cd7ed5befdc",
+                "name": "\u30bf\u30ad",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1617891937,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664197811,
+                    "logoutAt": 1664197767,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5201980236824576,
+                "nsaId": "e90afcbe1e7f6df0",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/06237fb054b6fc53",
+                "name": "XTindy",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1588148509,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664177159,
+                    "logoutAt": 1664177159,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "22844403818dc731",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/640d3a4e9072cb5e",
+                "name": "samule12",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": false,
+                "friendCreatedAt": 1589799006,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664026445,
+                    "logoutAt": 1664026445,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4880750009581568,
+                "nsaId": "7603fb18bd3fa93d",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/918e84bebc16e0ca",
+                "name": "mutou",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1582722395,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664015310,
+                    "logoutAt": 1664015310,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5989393030447104,
+                "nsaId": "d9167380a51fd803",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/fc74af28d8911629",
+                "name": "\u266aTevin",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1496765557,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664200163,
+                    "logoutAt": 1664000935,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5898034933071872,
+                "nsaId": "d1664416884f302c",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/131b5e51aa49680f",
+                "name": "saki",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1514134106,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1663599284,
+                    "logoutAt": 1663599148,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "b9826bb373d8478c",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/6b54b2866681e9e0",
+                "name": "Jungle",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": false,
+                "friendCreatedAt": 1496245027,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664073066,
+                    "logoutAt": 1663153434,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5007172458545152,
+                "nsaId": "84bcd832fc9dd03b",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/4cca67ff7032177f",
+                "name": "Gamma",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1502944514,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1662727154,
+                    "logoutAt": 1662727154,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6380685098549248,
+                "nsaId": "469f306bc05c9c5c",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/26961b55932eea7f",
+                "name": "Lemange",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1585238856,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664315166,
+                    "logoutAt": 1662472448,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5538442350886912,
+                "nsaId": "8462e23fc0d4156d",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/6b0c7b3c2ba27c36",
+                "name": "Max Combo",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1497620553,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1661509784,
+                    "logoutAt": 1661429900,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4577391569043456,
+                "nsaId": "5c0131c2c94b7a08",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/f8222bfd74fd5364",
+                "name": "Miao JP",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1661953178,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1663774177,
+                    "logoutAt": 1660709026,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5608635911569408,
+                "nsaId": "450d26b4e1ae0aba",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/55be475942f5cb36",
+                "name": "F",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1496223622,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1660225524,
+                    "logoutAt": 1654939006,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4589081101991936,
+                "nsaId": "453fb892db052fea",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/32ba99da3d7287ce",
+                "name": "Maccya",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1563373321,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1639649875,
+                    "logoutAt": 1639649875,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6384608128991232,
+                "nsaId": "063ea8e930fa0817",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/2cce7d19aed87ec4",
+                "name": "viccc",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1567600653,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1622039907,
+                    "logoutAt": 1621780085,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5440927483035648,
+                "nsaId": "635f3a3bdcf8e8cb",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/71dd1c064ca2d3e4",
+                "name": "Che",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1496410313,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1663479700,
+                    "logoutAt": 1610257590,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5628928983040000,
+                "nsaId": "ef5a35d8e696c961",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/1495511d0da685a5",
+                "name": "C\u00f6of\u0119e\u0142_8\u00b9",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1519746989,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 0,
+                    "logoutAt": 0,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6575847977975808,
+                "nsaId": "dd2ce017a1202096",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/76fcd78b0afe19ee",
+                "name": "V7GV",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1588148522,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 0,
+                    "logoutAt": 0,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6656525195739136,
+                "nsaId": "1a1b202af69c9006",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/478203c0cbb33071",
+                "name": "\u3046\u30f3\u30af\u30eb\u30b9",
+                "isFriend": true,
+                "isFavoriteFriend": true,
+                "isServiceUser": true,
+                "friendCreatedAt": 1588775519,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 0,
+                    "logoutAt": 0,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5802609702076416,
+                "nsaId": "233775cb7a7322aa",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/b66e53c5d054bbd3",
+                "name": "Rayleah",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1509466101,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664352247,
+                    "logoutAt": 1664352247,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6677905014784000,
+                "nsaId": "67941de4c6c3c818",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/bc56151247ae6503",
+                "name": "|\u03c9\u30fb) R\u3000",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1533873953,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664343068,
+                    "logoutAt": 1664343068,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6059578694238208,
+                "nsaId": "0bad96a4810c785e",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/8b80e1aa396aab4f",
+                "name": "Le",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1582974788,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664340589,
+                    "logoutAt": 1664340589,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5998197562671104,
+                "nsaId": "161c8daf13078e57",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/68f27cf0862fbb88",
+                "name": "Shaw",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1602341845,
+                "presence": {
+                    "state": "INACTIVE",
+                    "updatedAt": 1664353523,
+                    "logoutAt": 1664339903,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "93c3c9ac30b1199a",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/67ea827218e67720",
+                "name": "LLMS",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1580205397,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664332484,
+                    "logoutAt": 1664332484,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6502247259570176,
+                "nsaId": "2a53760ea1324a49",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/ea29b52f2896bda0",
+                "name": "Ryan Lau",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1602344311,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664331805,
+                    "logoutAt": 1664331642,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6347371716280320,
+                "nsaId": "e90739504115c95d",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/e7421248d801efb1",
+                "name": "\u30b7\u30a8\u30e0\u30d4]np\u010b[",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1603472425,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664310815,
+                    "logoutAt": 1664310321,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4942738174509056,
+                "nsaId": "101ba850efe8988a",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/10b5a7fbd61c7cfb",
+                "name": "XXM",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1583241342,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664303629,
+                    "logoutAt": 1664303629,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5784881993875456,
+                "nsaId": "8b011ad9283e5c92",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/8c5ef6225d221567",
+                "name": "Harin",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1515928006,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664300818,
+                    "logoutAt": 1664300818,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5016154788593664,
+                "nsaId": "53b8096f28b62337",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/43c384af31a4c412",
+                "name": "\u308c\u3044\u3053",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1514038589,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664300560,
+                    "logoutAt": 1664300548,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6393762894249984,
+                "nsaId": "01e2811bbbb6c4d2",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/c6bd94ea365c144c",
+                "name": "NT\u2605t\u00f3ngl\u0103o",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1583249222,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664294673,
+                    "logoutAt": 1664294673,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5776627116310528,
+                "nsaId": "08c21816a7b5c554",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/c98f7c06c4544c7f",
+                "name": "Sherry",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1563630093,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664292488,
+                    "logoutAt": 1664292488,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6702711725031424,
+                "nsaId": "8d5cff08ca902329",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/1c8aa961bcc347d2",
+                "name": "Draco",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1583234982,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664292368,
+                    "logoutAt": 1664292368,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5679849331490816,
+                "nsaId": "d3423ad50d42c948",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/fc142f14644026ad",
+                "name": "\u30b8\u30d0",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1522690429,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664292084,
+                    "logoutAt": 1664292084,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5605871384002560,
+                "nsaId": "a0fb6e7c552c6a97",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/8e04da2280786a34",
+                "name": "PZMao",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1509259718,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664290373,
+                    "logoutAt": 1664290351,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5028562988433408,
+                "nsaId": "ce57b2c3ccb214e7",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/faed3f610fc556c5",
+                "name": "BBQ\u2606R.",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1516205161,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664284078,
+                    "logoutAt": 1664284057,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6681694916575232,
+                "nsaId": "911acf3672d851f8",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/9d8cea05d83a5357",
+                "name": "XiaomiZhou",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1529848614,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664204522,
+                    "logoutAt": 1664204522,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4511220547715072,
+                "nsaId": "d497d3dd060083ee",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/6fb1b3c065bbc9dd",
+                "name": "herb",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1504423202,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664201848,
+                    "logoutAt": 1664199197,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6002983520174080,
+                "nsaId": "0d20aecd8b09f840",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/332fae6ad5f3bfeb",
+                "name": "\u30ec\u30f3\u30fc\u30ea\u30fc\u30a4\u30f3^_^",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1602435425,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664198208,
+                    "logoutAt": 1664175637,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4971058159157248,
+                "nsaId": "c1fc1e9a5b6fd8c3",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/39975b8eb7125e07",
+                "name": "\u3051\u3044",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1582975894,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664121717,
+                    "logoutAt": 1664121678,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "4168f9a689553e4a",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/3f8cb920321ac0dc",
+                "name": "G\u3055\u307e",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1544242387,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664074554,
+                    "logoutAt": 1664074554,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6580712395177984,
+                "nsaId": "8eba8dce854f3d83",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/43e63a6c69a8c1b5",
+                "name": "aka.MLDX",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1586448283,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664036894,
+                    "logoutAt": 1664033288,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4834159135031296,
+                "nsaId": "c9c0dfcc273e0240",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/abcedc9ed07f706e",
+                "name": "COCO",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1584453913,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664289443,
+                    "logoutAt": 1664030433,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6499959430971392,
+                "nsaId": "0a7b33766a142ee0",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/3ba712799897a8b3",
+                "name": "Lurker\u00bc",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1505222344,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664029607,
+                    "logoutAt": 1664029607,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5784199414874112,
+                "nsaId": "ca13fd849f1556e8",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/97bc3a4c5111c708",
+                "name": "B",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1594132377,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1663982921,
+                    "logoutAt": 1663982677,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "32944833b914e34d",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/359b0ea193fa2612",
+                "name": "PinkPink",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1567599022,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1663943901,
+                    "logoutAt": 1663943621,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5362864830742528,
+                "nsaId": "d538ae4938ba7a4a",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/19e45691626077db",
+                "name": "sanshui",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1582954868,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1663929746,
+                    "logoutAt": 1663924318,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "c1d486076fc99d66",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/fbec7ec40a25228c",
+                "name": "Blue",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1607352420,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1663511560,
+                    "logoutAt": 1663511560,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6171543272947712,
+                "nsaId": "40fa5c8f93d7de26",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/b940480949a0f8c8",
+                "name": "zzm",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1516359820,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1663463924,
+                    "logoutAt": 1663458126,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "edcf22486a02c65a",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/2d3897868b6dbf47",
+                "name": "H2o",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1570560001,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1662976671,
+                    "logoutAt": 1662976671,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6469709093666816,
+                "nsaId": "dc743e19f611a999",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/134669dbf2eabfd8",
+                "name": "EDISOn",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1529765197,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1662823015,
+                    "logoutAt": 1662815355,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "b9e8a3f603005e24",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/4f8387e124443d24",
+                "name": "\u30cf\u30ed\u30fc",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1502543445,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1662732091,
+                    "logoutAt": 1662732091,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6621697701511168,
+                "nsaId": "bd1b3c8f198991cb",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/687956fc9febdf50",
+                "name": "ace.hk",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1584762587,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664341551,
+                    "logoutAt": 1662468657,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "924a8536ec566228",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/1687b2d7315da985",
+                "name": "eat toes",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1568052278,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664110799,
+                    "logoutAt": 1661680132,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6175248593911808,
+                "nsaId": "66a925341512f257",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/775ad7301b2dd7b4",
+                "name": "PFF[\u25c6^\u25c7]",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1583331719,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1661538966,
+                    "logoutAt": 1661538942,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6683579610562560,
+                "nsaId": "b23f4f5f631f24eb",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/f57ed47760e5eb75",
+                "name": "duckgames",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1585410757,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664287373,
+                    "logoutAt": 1661355417,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5709416292679680,
+                "nsaId": "b051f405539714db",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/df09a1ce3fac0f96",
+                "name": "wellsnake",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1586128730,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1661183278,
+                    "logoutAt": 1661182538,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5597771790548992,
+                "nsaId": "5265f25b069de36e",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/89643371822a5ef8",
+                "name": "rudi SNES1",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1537455613,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1664136100,
+                    "logoutAt": 1659325384,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6551774593220608,
+                "nsaId": "77d31905a8637140",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/c3c3f95a9170dd11",
+                "name": "trt",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1585794426,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1658568582,
+                    "logoutAt": 1658568556,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5173266527551488,
+                "nsaId": "6436ccdbe88e6565",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/9bd8de2943ab88b1",
+                "name": "#\u3075\u3046\u305b\u3093#US",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1531577035,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1659051452,
+                    "logoutAt": 1656574385,
+                    "game": {}
+                }
+            },
+            {
+                "id": 5626295769366528,
+                "nsaId": "c1b6d2b135c8215c",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/61150fb9c282d553",
+                "name": "sc",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1585751520,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1658237304,
+                    "logoutAt": 1649092772,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4913524033224704,
+                "nsaId": "d8826b4ef5e19d00",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/d99d3021233a46e4",
+                "name": "yuh_owo",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1529839666,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1637822357,
+                    "logoutAt": 1637822357,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6425450873028608,
+                "nsaId": "2b26fbbaf7f361e3",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/9c214ba041958556",
+                "name": "sggggy",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1585053063,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1642834177,
+                    "logoutAt": 1635514695,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "9ba8b695b154c071",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/f6b55c91c27149ec",
+                "name": "52hz",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1555427540,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1644598849,
+                    "logoutAt": 1634566661,
+                    "game": {}
+                }
+            },
+            {
+                "id": 4821260300124160,
+                "nsaId": "133a72fb4b36f7f9",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/bd46007c62e98098",
+                "name": "\u30c1\u30f3\u30b7\u30f3",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1522859195,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1631715904,
+                    "logoutAt": 1631715904,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "4c43937b399f8904",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/5589c31e38fb4615",
+                "name": "loki",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1496223776,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1657468281,
+                    "logoutAt": 1627541835,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "da84e9384848b720",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/22ee6fd9600b2d3a",
+                "name": "xuihuan",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1502551480,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1615739260,
+                    "logoutAt": 1615739202,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6214741968486400,
+                "nsaId": "233499fef0ea67c7",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/f8ccb2bcfde0848d",
+                "name": "AlsichKamn",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1582953369,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1613969262,
+                    "logoutAt": 1613962466,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "e43020560aede2c0",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/17f5dd155bdbaf95",
+                "name": "\u3046\u3093\u3010\u3011\u3053\u3061\u3093\u306a",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1566309242,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1657176756,
+                    "logoutAt": 1598694767,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "d17a24ef148a02c8",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/3fe3179de70040e1",
+                "name": "say",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1500792983,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 1624566265,
+                    "logoutAt": 1534835365,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6723234766520320,
+                "nsaId": "87d4da20b20babd8",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/a687ff753ecc91a3",
+                "name": "heas_007\u00b0",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1500786930,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 0,
+                    "logoutAt": 0,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "0f2d21dd191d74f2",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/1dd98fa8564ca0f3",
+                "name": "miu",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1529850746,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 0,
+                    "logoutAt": 0,
+                    "game": {}
+                }
+            },
+            {
+                "id": 0,
+                "nsaId": "ea99ffe09b226cc4",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/146f5dcbe7402f8e",
+                "name": "zinwa",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": false,
+                "friendCreatedAt": 1498128159,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 0,
+                    "logoutAt": 0,
+                    "game": {}
+                }
+            },
+            {
+                "id": 6706011058929664,
+                "nsaId": "4efc68a408d66b10",
+                "imageUri": "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/2f1587165f9c54cd",
+                "name": "\u266a",
+                "isFriend": true,
+                "isFavoriteFriend": false,
+                "isServiceUser": true,
+                "friendCreatedAt": 1588775151,
+                "presence": {
+                    "state": "OFFLINE",
+                    "updatedAt": 0,
+                    "logoutAt": 0,
+                    "game": {}
+                }
+            }
+        ]
+    },
+    "correlationId": "C0059293-A0C3-4BE8-BB3A-AB903FD7C4B6-1c1cf6f9"
+}
