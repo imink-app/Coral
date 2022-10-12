@@ -1,11 +1,12 @@
 import Foundation
+import InkMoya
 
 enum CoralAPI {
     case friendList(String)
     case announcementList(String)
 }
 
-extension CoralAPI: APITargetType {
+extension CoralAPI: TargetType {
     var baseURL: URL {
         APIHost.znc.url
     }
@@ -19,7 +20,7 @@ extension CoralAPI: APITargetType {
         }
     }
 
-    var method: APIMethod {
+    var method: Method {
         switch self {
         case .friendList, .announcementList:
             return .post
@@ -51,6 +52,13 @@ extension CoralAPI: APITargetType {
                 "requestId": UUID().uuidString
             ])
         }
+    }
+
+    var sampleData: Data {
+        let path = "/Mock/SampleData/\(sampleDataFileName)"
+        logger.trace("\(path)")
+        let url = Bundle.module.url(forResource: path, withExtension: "json")!
+        return try! Data(contentsOf: url)
     }
 
     var sampleDataFileName: String {

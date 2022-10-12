@@ -1,4 +1,5 @@
 import Foundation
+import InkMoya
 
 #if canImport(Crypto)
     import Crypto
@@ -26,7 +27,7 @@ enum AuthAPI {
         f: String)
 }
 
-extension AuthAPI: APITargetType {
+extension AuthAPI: TargetType {
     var baseURL: URL {
         switch self {
         case .nsoLookup:
@@ -61,7 +62,7 @@ extension AuthAPI: APITargetType {
         }
     }
 
-    var method: APIMethod {
+    var method: Method {
         switch self {
         case .nsoLookup,
             .authorize,
@@ -188,6 +189,13 @@ extension AuthAPI: APITargetType {
         default:
             return nil
         }
+    }
+
+    var sampleData: Data {
+        let path = "/Mock/SampleData/\(sampleDataFileName)"
+        logger.trace("\(path)")
+        let url = Bundle.module.url(forResource: path, withExtension: "json")!
+        return try! Data(contentsOf: url)
     }
 
     var sampleDataFileName: String {

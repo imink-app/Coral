@@ -1,4 +1,5 @@
 import Foundation
+import InkMoya
 
 enum InkAPI {
     case f(accessToken: String, hashMethod: HashMethod)
@@ -8,7 +9,7 @@ enum InkAPI {
     }
 }
 
-extension InkAPI: APITargetType {
+extension InkAPI: TargetType {
     var baseURL: URL {
         APIHost.imink.url 
     }
@@ -20,7 +21,7 @@ extension InkAPI: APITargetType {
         }
     }
 
-    var method: APIMethod {
+    var method: Method {
         switch self {
         case .f:
             return .post
@@ -43,6 +44,13 @@ extension InkAPI: APITargetType {
                 "hash_method": hashMethod.rawValue,
             ])
         }
+    }
+
+    var sampleData: Data {
+        let path = "/Mock/SampleData/\(sampleDataFileName)"
+        logger.trace("\(path)")
+        let url = Bundle.module.url(forResource: path, withExtension: "json")!
+        return try! Data(contentsOf: url)
     }
 
     var sampleDataFileName: String {

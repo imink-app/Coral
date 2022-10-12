@@ -1,17 +1,18 @@
 import Foundation
 import Logging
+import InkMoya
 
 #if canImport(FoundationNetworking)
     import FoundationNetworking
 #endif
 
 public class CoralSession {
-    public var apiSession: APISessionType = APISession.shared
+    public var apiSession: IMSessionType = IMSession.shared
 
     private var generatedCodeVerifier: String? = nil
     public var accessToken: String? = nil
 
-    public init(sessionType: APISessionType? = nil, codeVerifier: String? = nil) {
+    public init(sessionType: IMSessionType? = nil, codeVerifier: String? = nil) {
         if let sessionType = sessionType {
             self.apiSession = sessionType
         }
@@ -157,5 +158,6 @@ extension CoralSession {
         case wrongLoginLink
         case codeVerifierIsNotGenerated
         case error
+        case coralVersionNotFound
     }
 }
