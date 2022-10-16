@@ -31,7 +31,7 @@ let package = Package(
                 .product(name: "Logging", package: "swift-log"),
                 .product(name: "InkMoya", package: "InkMoya"),
             ],
-            resources: [.copy("API/Mock/SampleData")]),
+            resources: [.copy("API/SampleData")]),
         .executableTarget(
             name: "CoralCLI",
             dependencies: [

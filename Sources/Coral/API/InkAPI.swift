@@ -47,7 +47,7 @@ extension InkAPI: TargetType {
     }
 
     var sampleData: Data {
-        let path = "/Mock/SampleData/\(sampleDataFileName)"
+        let path = "/SampleData/\(sampleDataFileName)"
         logger.trace("\(path)")
         let url = Bundle.module.url(forResource: path, withExtension: "json")!
         return try! Data(contentsOf: url)

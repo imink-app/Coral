@@ -10,7 +10,7 @@ public class CoralSession {
     public var apiSession: IMSessionType = IMSession.shared
 
     private var generatedCodeVerifier: String? = nil
-    public var accessToken: String? = nil
+    public var coralAccessToken: String? = nil
 
     public init(sessionType: IMSessionType? = nil, codeVerifier: String? = nil) {
         if let sessionType = sessionType {
@@ -23,6 +23,20 @@ public class CoralSession {
 }
 
 extension CoralSession {
+    public func getCoralVersion() async throws -> String {
+        let (data, res) = try await apiSession.request(api: AuthAPI.nsoLookup)
+        if res.httpURLResponse.statusCode != 200 {
+            throw Error.error
+        }
+        let lookupResult = try data.decode(LookupResult.self)
+
+        guard let firstResult = lookupResult.results.first else {
+            throw Error.error
+        }
+
+        return firstResult.version
+    }
+    
     public func generateLoginAddress() -> String {
         generatedCodeVerifier = generateCodeVerifier()
         logger.trace("codeVerifier: \(generatedCodeVerifier!)")
@@ -52,8 +66,51 @@ extension CoralSession {
         }
 
         let loginResult = try await getLoginResult(sessionToken: sessionToken)
-        accessToken = loginResult.webApiServerCredential.accessToken
+        coralAccessToken = loginResult.webApiServerCredential.accessToken
         return loginResult
+    }
+
+    public func getGameServices() async throws -> [GameService] {
+        if Coral.version == nil {
+            Coral.setVersion(try await getCoralVersion())
+        }
+
+        guard let coralAccessToken = coralAccessToken else {
+            throw Error.loginRequired
+        }
+
+        let listWebServiceAPI = CoralAPI.listWebService(token: coralAccessToken)
+        let (data, res) = try await apiSession.request(api: listWebServiceAPI)
+        if res.httpURLResponse.statusCode != 200 {
+            throw Error.error
+        }
+        let gameServicesResult = try data.decode(APIResult<[GameService]>.self)
+        return gameServicesResult.result
+    }
+
+    public func getGameServiceToken(serviceId: Int64) async throws -> GameServiceToken {
+        if Coral.version == nil {
+            Coral.setVersion(try await getCoralVersion())
+        }
+
+        guard let coralAccessToken = coralAccessToken else {
+            throw Error.loginRequired
+        }
+
+        let fResult = try await getF(token: coralAccessToken, hashMethod: .hash1)
+
+        let getWebServiceTokenAPI = CoralAPI.getWebServiceToken(
+            serviceId: serviceId,
+            token: coralAccessToken,
+            requestId: fResult.requestId,
+            timestamp: fResult.timestamp,
+            f: fResult.f)
+        let (data, res) = try await apiSession.request(api: getWebServiceTokenAPI)
+        if res.httpURLResponse.statusCode != 200 {
+            throw Error.error
+        }
+        let gameServiceToken = try data.decode(APIResult<GameServiceToken>.self)
+        return gameServiceToken.result
     }
 }
 
@@ -90,13 +147,7 @@ extension CoralSession {
         let meResult = try data.decode(MeResult.self)
 
         // 3.
-        let fAPI = InkAPI.f(
-            accessToken: connectTokenResult.accessToken, hashMethod: InkAPI.HashMethod.hash1)
-        (data, res) = try await apiSession.request(api: fAPI)
-        if res.httpURLResponse.statusCode != 200 {
-            throw Error.error
-        }
-        let fResult = try data.decode(FResult.self)
+        let fResult = try await getF(token: connectTokenResult.accessToken, hashMethod: .hash1)
 
         // 4.
         let loginAPI = AuthAPI.login(
@@ -117,18 +168,14 @@ extension CoralSession {
         return loginResult.result
     }
 
-    private func getCoralVersion() async throws -> String {
-        let (data, res) = try await apiSession.request(api: AuthAPI.nsoLookup)
+    private func getF(token: String, hashMethod: InkAPI.HashMethod) async throws -> FResult {
+        let fAPI = InkAPI.f(accessToken: token, hashMethod: hashMethod)
+        let (data, res) = try await apiSession.request(api: fAPI)
         if res.httpURLResponse.statusCode != 200 {
             throw Error.error
         }
-        let lookupResult = try data.decode(LookupResult.self)
-
-        guard let firstResult = lookupResult.results.first else {
-            throw Error.error
-        }
-
-        return firstResult.version
+        let fResult = try data.decode(FResult.self)
+        return fResult
     }
 
     private func generateCodeVerifier() -> String {
@@ -159,5 +206,6 @@ extension CoralSession {
         case codeVerifierIsNotGenerated
         case error
         case coralVersionNotFound
+        case loginRequired
     }
 }

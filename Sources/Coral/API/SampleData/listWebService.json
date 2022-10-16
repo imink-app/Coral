@@ -1,0 +1,106 @@
+{
+    "status": 0,
+    "result": [
+        {
+                "id": 4834290508791808,
+                "uri": "https://api.lp1.av5ja.srv.nintendo.net",
+                "customAttributes": [
+                    {
+                        "attrKey": "verifyMembership",
+                        "attrValue": "true"
+                    },
+                    {
+                        "attrValue": "true",
+                        "attrKey": "deepLinkingEnabled"
+                    },
+                    {
+                        "attrKey": "fullScreen",
+                        "attrValue": "true"
+                    },
+                    {
+                        "attrValue": "000000",
+                        "attrKey": "appNavigationBarBgColor"
+                    },
+                    {
+                        "attrValue": "000000",
+                        "attrKey": "appStatusBarBgColor"
+                    }
+                ],
+                "whiteList": [
+                    "*.av5ja.srv.nintendo.net"
+                ],
+                "name": "Splatoon 3（斯普拉遁 3）",
+                "imageUri": "https://cdn.znc.srv.nintendo.net/gameWebServices/n84dab60/n84dab60/images/cnZh/banner.png"
+        },
+        {
+                "id": 4953919198265344,
+                "uri": "https://web.sd.lp1.acbaa.srv.nintendo.net",
+                "customAttributes": [
+                    {
+                        "attrValue": "true",
+                        "attrKey": "verifyMembership"
+                    },
+                    {
+                        "attrValue": "true",
+                        "attrKey": "deepLinkingEnabled"
+                    },
+                    {
+                        "attrValue": "82D7AA",
+                        "attrKey": "appNavigationBarBgColor"
+                    },
+                    {
+                        "attrValue": "82D7AA",
+                        "attrKey": "appStatusBarBgColor"
+                    }
+                ],
+                "whiteList": [
+                    "*.acbaa.srv.nintendo.net"
+                ],
+                "name": "集合啦！动物森友会",
+                "imageUri": "https://cdn.znc.srv.nintendo.net/gameWebServices/n5b4648f/n5b4648f/images/cnZh/banner.png"
+        },
+        {
+                "id": 5598642853249024,
+                "uri": "https://app.smashbros.nintendo.net",
+                "customAttributes": [
+                    {
+                        "attrKey": "verifyMembership",
+                        "attrValue": "true"
+                    },
+                    {
+                        "attrValue": "A50514",
+                        "attrKey": "appNavigationBarBgColor"
+                    },
+                    {
+                        "attrKey": "appStatusBarBgColor",
+                        "attrValue": "A50514"
+                    }
+                ],
+                "whiteList": [
+                    "app.smashbros.nintendo.net"
+                ],
+                "name": "任天堂明星大乱斗 特別版",
+                "imageUri": "https://cdn.znc.srv.nintendo.net/gameWebServices/n3f32691/n3f32691/images/cnZh/banner.png"
+        },
+        {
+                "id": 5741031244955648,
+                "uri": "https://app.splatoon2.nintendo.net/",
+                "customAttributes": [
+                    {
+                        "attrValue": "E60012",
+                        "attrKey": "appNavigationBarBgColor"
+                    },
+                    {
+                        "attrValue": "E60012",
+                        "attrKey": "appStatusBarBgColor"
+                    }
+                ],
+                "whiteList": [
+                    "app.splatoon2.nintendo.net"
+                ],
+                "name": "Splatoon 2",
+                "imageUri": "https://cdn.znc.srv.nintendo.net/gameWebServices/splatoon2/images/cnZh/banner.png"
+        }
+    ],
+    "correlationId": "DEA6785D-5D7D-4957-812B-FB9021973276-5335febe"
+}

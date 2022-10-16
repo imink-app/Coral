@@ -19,12 +19,6 @@ enum AuthAPI {
         language: String,
         timestamp: Int64,
         f: String)
-    case getWebServiceToken(
-        webApiServerToken: String,
-        requestId: String,
-        registrationToken: String,
-        timestamp: Int64,
-        f: String)
 }
 
 extension AuthAPI: TargetType {
@@ -38,7 +32,7 @@ extension AuthAPI: TargetType {
             return APIHost.accountsNintendoConnect.url
         case .me:
             return APIHost.apiAccountsNintendo.url
-        case .login, .getWebServiceToken:
+        case .login:
             return APIHost.znc.url
         }
     }
@@ -57,8 +51,6 @@ extension AuthAPI: TargetType {
             return "/users/me"
         case .login:
             return "/v3/Account/Login"
-        case .getWebServiceToken:
-            return "/v2/Game/GetWebServiceToken"
         }
     }
 
@@ -70,8 +62,7 @@ extension AuthAPI: TargetType {
             return .get
         case .sessionToken,
             .token,
-            .login,
-            .getWebServiceToken:
+            .login:
             return .post
         }
     }
@@ -137,14 +128,6 @@ extension AuthAPI: TargetType {
                 "X-ProductVersion": Coral.version!,
                 "Accept-Encoding": "gzip, deflate, br",
             ]
-        case .getWebServiceToken(let webApiServerToken, _, _, _, _):
-            return [
-                "User-Agent": "com.nintendo.znca/\(Coral.version!) (iOS/14.2)",
-                "Authorization": "Bearer \(webApiServerToken)",
-                "x-platform": "Android",
-                "X-ProductVersion": Coral.version!,
-                "Accept-Encoding": "gzip, deflate, br",
-            ]
         default:
             return nil
         }
@@ -186,13 +169,14 @@ extension AuthAPI: TargetType {
                     )
                 )
             )
+
         default:
             return nil
         }
     }
 
     var sampleData: Data {
-        let path = "/Mock/SampleData/\(sampleDataFileName)"
+        let path = "/SampleData/\(sampleDataFileName)"
         logger.trace("\(path)")
         let url = Bundle.module.url(forResource: path, withExtension: "json")!
         return try! Data(contentsOf: url)
@@ -210,8 +194,6 @@ extension AuthAPI: TargetType {
             return "me"
         case .login:
             return "login"
-        case .getWebServiceToken:
-            return "getWebServiceToken"
         default:
             return ""
         }
