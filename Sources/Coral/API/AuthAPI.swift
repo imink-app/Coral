@@ -54,7 +54,7 @@ extension AuthAPI: TargetType {
         }
     }
 
-    var method: Method {
+    var method: RequestMethod {
         switch self {
         case .nsoLookup,
             .authorize,

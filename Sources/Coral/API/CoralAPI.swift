@@ -26,7 +26,7 @@ extension CoralAPI: TargetType {
         }
     }
 
-    var method: Method {
+    var method: RequestMethod {
         switch self {
         case .friendList, .announcementList, .listWebService, .getWebServiceToken:
             return .post
