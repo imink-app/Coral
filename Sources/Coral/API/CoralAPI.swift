@@ -2,9 +2,9 @@ import Foundation
 import InkMoya
 
 enum CoralAPI {
-    case friendList(String)
-    case announcementList(String)
-    case listWebService(token: String)
+    case friendList
+    case announcementList
+    case listWebService
     case getWebServiceToken(serviceId: Int64, token: String, requestId: String, timestamp: Int64, f: String)
 }
 
@@ -35,15 +35,12 @@ extension CoralAPI: TargetType {
 
     var headers: [String: String]? {
         switch self {
-        case .friendList(let token),
-            .announcementList(let token),
-            .listWebService(let token),
-            .getWebServiceToken(_, let token, _, _, _):
+        case .friendList,
+            .announcementList,
+            .listWebService,
+            .getWebServiceToken:
             return [
-                "User-Agent": "com.nintendo.znca/\(Coral.version!) (iOS/14.2)",
-                "Authorization": "Bearer \(token)",
                 "x-platform": "Android",
-                "X-ProductVersion": Coral.version!,
                 "Accept-Encoding": "gzip, deflate, br",
             ]
         }

@@ -1,5 +1,6 @@
 import Foundation
 import Logging
+import InkMoya
 
 public typealias LogLevel = Logger.Level
 
@@ -11,14 +12,30 @@ extension Coral {
 }
 
 extension Coral {
-    static var version: String? 
     static var logLevel = LogLevel.error
-
-    static func setVersion(_ version: String) {
-        Coral.version = version
-    }
 
     public static func setLogLevel(_ logLevel: LogLevel) {
         Coral.logLevel = logLevel
+    }
+    
+    public static func getCoralVersion() async throws -> String {
+        let apiSession = IMSession.shared
+        let (data, res) = try await apiSession.request(api: AuthAPI.nsoLookup)
+        if res.httpURLResponse.statusCode != 200 {
+            throw Error.error
+        }
+        let lookupResult = try data.decode(LookupResult.self)
+
+        guard let firstResult = lookupResult.results.first else {
+            throw Error.error
+        }
+
+        return firstResult.version
+    }
+}
+
+extension Coral {
+    public enum Error: Swift.Error {
+        case error
     }
 }

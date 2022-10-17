@@ -101,31 +101,22 @@ extension AuthAPI: TargetType {
 
     var headers: [String: String]? {
         switch self {
-        case .authorize:
-            return [
-                "User-Agent":
-                    "Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Mobile/15E148 Safari/604.1"
-            ]
         case .sessionToken,
             .token:
             return [
                 "Accept": "application/json",
-                "User-Agent": "OnlineLounge/\(Coral.version!) NASDKAPI iOS",
             ]
         case .me(let accessToken):
             return [
                 "Accept": "application/json",
-                "User-Agent": "OnlineLounge/\(Coral.version!) NASDKAPI iOS",
                 "Authorization": "Bearer \(accessToken)",
                 "Accept-Encoding": "gzip, deflate, br",
             ]
         case .login:
             return [
                 "Accept": "application/json",
-                "User-Agent": "com.nintendo.znca/\(Coral.version!) (iOS/14.2)",
                 "Authorization": "Bearer",
                 "X-Platform": "Android",
-                "X-ProductVersion": Coral.version!,
                 "Accept-Encoding": "gzip, deflate, br",
             ]
         default:

@@ -12,31 +12,16 @@ public class CoralSession {
     private var generatedCodeVerifier: String? = nil
     public var coralAccessToken: String? = nil
 
-    public init(sessionType: IMSessionType? = nil, codeVerifier: String? = nil) {
+    public init(nsoVersion: String, sessionType: IMSessionType? = nil) {
         if let sessionType = sessionType {
             self.apiSession = sessionType
         }
-        if let codeVerifier = codeVerifier {
-            generatedCodeVerifier = codeVerifier
-        }
+        
+        self.apiSession.plugins = [LoginAuthPlugin(nsoVersion: nsoVersion)]
     }
 }
 
 extension CoralSession {
-    public func getCoralVersion() async throws -> String {
-        let (data, res) = try await apiSession.request(api: AuthAPI.nsoLookup)
-        if res.httpURLResponse.statusCode != 200 {
-            throw Error.error
-        }
-        let lookupResult = try data.decode(LookupResult.self)
-
-        guard let firstResult = lookupResult.results.first else {
-            throw Error.error
-        }
-
-        return firstResult.version
-    }
-    
     public func generateLoginAddress() -> String {
         generatedCodeVerifier = generateCodeVerifier()
         logger.trace("codeVerifier: \(generatedCodeVerifier!)")
@@ -55,32 +40,22 @@ extension CoralSession {
         // Parse the login link and extract the SessionTokenCode
         let sessionTokenCode = try getSessionTokenCode(loginLink: loginLink)
 
-        Coral.setVersion(try await getCoralVersion())
-
         return try await getSessionToken(sessionTokenCode: sessionTokenCode, codeVerifier: codeVerifier)
     }
-
+    
     public func login(sessionToken: String) async throws -> LoginResult {
-        if Coral.version == nil {
-            Coral.setVersion(try await getCoralVersion())
-        }
-
         let loginResult = try await getLoginResult(sessionToken: sessionToken)
         coralAccessToken = loginResult.webApiServerCredential.accessToken
+        
+        var plugins = apiSession.plugins
+        plugins.removeAll { $0 is CoralTokenPlugin }
+        apiSession.plugins = plugins + [CoralTokenPlugin(token: coralAccessToken!)]
+        
         return loginResult
     }
 
     public func getGameServices() async throws -> [GameService] {
-        if Coral.version == nil {
-            Coral.setVersion(try await getCoralVersion())
-        }
-
-        guard let coralAccessToken = coralAccessToken else {
-            throw Error.loginRequired
-        }
-
-        let listWebServiceAPI = CoralAPI.listWebService(token: coralAccessToken)
-        let (data, res) = try await apiSession.request(api: listWebServiceAPI)
+        let (data, res) = try await apiSession.request(api: CoralAPI.listWebService)
         if res.httpURLResponse.statusCode != 200 {
             throw Error.error
         }
@@ -89,10 +64,6 @@ extension CoralSession {
     }
 
     public func getGameServiceToken(serviceId: Int64) async throws -> GameServiceToken {
-        if Coral.version == nil {
-            Coral.setVersion(try await getCoralVersion())
-        }
-
         guard let coralAccessToken = coralAccessToken else {
             throw Error.loginRequired
         }

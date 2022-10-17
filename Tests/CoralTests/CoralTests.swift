@@ -7,7 +7,8 @@ final class CoralTests: XCTestCase {
     func testMockData() async throws {
         Coral.setLogLevel(.trace)
 
-        let coralSession: CoralSession = CoralSession(sessionType: IMSessionMock())
+        let nsoVersion = try await Coral.getCoralVersion()
+        let coralSession: CoralSession = CoralSession(nsoVersion: nsoVersion, sessionType: IMSessionMock())
 
         let loginAddress = coralSession.generateLoginAddress()
         XCTAssertNotEqual(loginAddress, "")

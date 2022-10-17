@@ -4,7 +4,8 @@ import Coral
 func login() async throws {
     Coral.setLogLevel(.trace)
 
-    let coralSession = CoralSession()
+    let nsoVersion = try await Coral.getCoralVersion()
+    let coralSession = CoralSession(nsoVersion: nsoVersion)
 
     var config = try? Config.load()
     if config == nil {
