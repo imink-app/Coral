@@ -7,8 +7,8 @@ final class CoralTests: XCTestCase {
     func testMockData() async throws {
         Coral.setLogLevel(.trace)
 
-        let nsoVersion = try await Coral.getCoralVersion()
-        let coralSession: CoralSession = CoralSession(nsoVersion: nsoVersion, sessionType: IMSessionMock())
+        let version = try await Coral.getVersion()
+        let coralSession: CoralSession = CoralSession(version: version, sessionType: IMSessionMock())
 
         let loginAddress = coralSession.generateLoginAddress()
         XCTAssertNotEqual(loginAddress, "")
@@ -23,7 +23,7 @@ final class CoralTests: XCTestCase {
         let splatoon3ServiceId: Int64 = 4834290508791808
         let gameServices = try await coralSession.getGameServices()
         XCTAssertEqual(gameServices.count > 0, true)
-        var splatoon3GameService = gameServices.first { $0.id == splatoon3ServiceId }!
+        let splatoon3GameService = gameServices.first { $0.id == splatoon3ServiceId }!
         XCTAssertEqual(splatoon3GameService.id, splatoon3ServiceId)
 
         let gameServiceToken = try await coralSession.getGameServiceToken(serviceId: splatoon3GameService.id)

@@ -18,7 +18,7 @@ extension Coral {
         Coral.logLevel = logLevel
     }
     
-    public static func getCoralVersion() async throws -> String {
+    public static func getVersion() async throws -> String {
         let apiSession = IMSession.shared
         let (data, res) = try await apiSession.request(api: AuthAPI.nsoLookup)
         if res.httpURLResponse.statusCode != 200 {

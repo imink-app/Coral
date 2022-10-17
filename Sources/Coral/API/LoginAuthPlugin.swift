@@ -12,7 +12,7 @@ import InkMoya
 #endif
 
 struct LoginAuthPlugin: PluginType {
-    let nsoVersion: String
+    let version: String
     
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         var request = request
@@ -21,16 +21,16 @@ struct LoginAuthPlugin: PluginType {
             case .sessionToken,
                     .token,
                     .me:
-                request.addValue("OnlineLounge/\(nsoVersion) NASDKAPI iOS", forHTTPHeaderField: "User-Agent")
+                request.addValue("OnlineLounge/\(version) NASDKAPI iOS", forHTTPHeaderField: "User-Agent")
             case .login:
-                request.addValue("com.nintendo.znca/\(nsoVersion) (iOS/14.2)", forHTTPHeaderField: "User-Agent")
-                request.addValue(nsoVersion, forHTTPHeaderField: "X-ProductVersion")
+                request.addValue("com.nintendo.znca/\(version) (iOS/14.2)", forHTTPHeaderField: "User-Agent")
+                request.addValue(version, forHTTPHeaderField: "X-ProductVersion")
             default:
                 break
             }
         } else if let _ = target as? CoralAPI {
-            request.addValue("com.nintendo.znca/\(nsoVersion) (iOS/14.2)", forHTTPHeaderField: "User-Agent")
-            request.addValue(nsoVersion, forHTTPHeaderField: "X-ProductVersion")
+            request.addValue("com.nintendo.znca/\(version) (iOS/14.2)", forHTTPHeaderField: "User-Agent")
+            request.addValue(version, forHTTPHeaderField: "X-ProductVersion")
         }
         
         return request

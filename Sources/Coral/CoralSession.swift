@@ -12,12 +12,12 @@ public class CoralSession {
     private var generatedCodeVerifier: String? = nil
     public var coralAccessToken: String? = nil
 
-    public init(nsoVersion: String, sessionType: IMSessionType? = nil) {
+    public init(version: String, sessionType: IMSessionType? = nil) {
         if let sessionType = sessionType {
             self.apiSession = sessionType
         }
         
-        self.apiSession.plugins = [LoginAuthPlugin(nsoVersion: nsoVersion)]
+        self.apiSession.plugins = [LoginAuthPlugin(version: version)]
     }
 }
 
