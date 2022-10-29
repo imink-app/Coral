@@ -19,12 +19,6 @@ struct ConnectTokenResult: Decodable {
     let expiresIn: Int64
 }
 
-struct MeResult: Decodable {
-    let country: String
-    let birthday: String
-    let language: String
-}
-
 struct APIResult<T: Decodable>: Decodable {
     let status: Int64
     let correlationId: String

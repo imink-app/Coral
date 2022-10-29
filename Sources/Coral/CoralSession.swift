@@ -12,6 +12,8 @@ public class CoralSession {
     private var generatedCodeVerifier: String? = nil
     public var coralAccessToken: String? = nil
 
+    private var meResult: MeResult!
+
     public init(version: String, sessionType: IMSessionType? = nil) {
         if let sessionType = sessionType {
             self.apiSession = sessionType
@@ -52,6 +54,14 @@ extension CoralSession {
         apiSession.plugins = plugins + [CoralTokenPlugin(token: coralAccessToken!)]
         
         return loginResult
+    }
+
+    public func getMe() throws -> MeResult {
+        if meResult == nil {
+            throw Error.loginRequired
+        }
+
+        return meResult
     }
 
     public func getGameServices() async throws -> [GameService] {
@@ -115,7 +125,7 @@ extension CoralSession {
         if res.httpURLResponse.statusCode != 200 {
             throw Error.error
         }
-        let meResult = try data.decode(MeResult.self)
+        meResult = try data.decode(MeResult.self)
 
         // 3.
         let fResult = try await getF(token: connectTokenResult.accessToken, hashMethod: .hash1)
