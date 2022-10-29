@@ -13,6 +13,11 @@ extension Config {
     func save() throws {
         try self.toJson().write(to: Config.getConfigURL(), atomically: true, encoding: .utf8)
     }
+
+    func remove() throws {
+        let fileManager = FileManager()
+        try fileManager.removeItem(at: Config.getConfigURL())
+    }
 }
 
 extension Config {

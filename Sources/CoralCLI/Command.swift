@@ -36,3 +36,8 @@ func login() async throws {
     let result = try await coralSession.login(sessionToken: config!.sessionToken)
     print(result.webApiServerCredential.accessToken)
 }
+
+func clean() throws {
+    let config = try? Config.load()
+    try config?.remove()
+}

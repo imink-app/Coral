@@ -8,6 +8,7 @@ struct CoralCLI: AsyncParsableCommand {
 
     enum CMD: String, ExpressibleByArgument, CaseIterable {
         case login
+        case clean
     }
 
     @Argument(help: "Log In")
@@ -17,6 +18,8 @@ struct CoralCLI: AsyncParsableCommand {
         switch cmd {
         case .login:
             try await login()
+        case .clean:
+            try clean()
         }
     }
 }
