@@ -16,6 +16,7 @@ extension Coral {
 
     public static func setLogLevel(_ logLevel: LogLevel) {
         Coral.logLevel = logLevel
+        InkMoya.setLogLevel(logLevel)
     }
     
     public static func getVersion() async throws -> String {
