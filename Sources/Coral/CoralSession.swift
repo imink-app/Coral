@@ -68,7 +68,7 @@ extension CoralSession {
             throw Error.loginRequired
         }
 
-        let fResult = try await getF(token: coralAccessToken, hashMethod: .hash1)
+        let fResult = try await getF(token: coralAccessToken, hashMethod: .hash2)
 
         let getWebServiceTokenAPI = CoralAPI.getWebServiceToken(
             serviceId: serviceId,
