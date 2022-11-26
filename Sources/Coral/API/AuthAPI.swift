@@ -115,7 +115,6 @@ extension AuthAPI: TargetType {
         case .login:
             return [
                 "Accept": "application/json",
-                "Authorization": "Bearer",
                 "X-Platform": "Android",
                 "Accept-Encoding": "gzip, deflate, br",
             ]

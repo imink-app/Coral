@@ -1,7 +1,9 @@
 import Foundation
+import Coral
 
 struct Config: Codable {
-    let sessionToken: String
+    var sessionToken: String? = nil
+    var webApiServerCredential: WebApiServerCredential? = nil
 }
 
 extension Config {
@@ -22,9 +24,6 @@ extension Config {
 
 extension Config {
     static func load() throws -> Config? {
-        print(Config.getConfigURL().absoluteString)
-        var isDirectory = ObjCBool(true)
-        print(FileManager.default.fileExists(atPath: Config.getConfigURL().absoluteString, isDirectory: &isDirectory))
         guard let json = try? String(contentsOf: getConfigURL(), encoding: .utf8) else {
             return nil
         }
@@ -38,5 +37,33 @@ extension Config {
         executableURL?.deleteLastPathComponent()
         let configURL = executableURL!.appendingPathComponent("config.txt")
         return configURL
+    }
+}
+
+struct ConfigStorage: CoralStorage {
+    var codeVerifier: String?
+    var sessionToken: String? {
+        get { Load().sessionToken }
+        set { 
+            var config = Load()
+            config.sessionToken = newValue
+            try? config.save()
+        }
+    }
+    var webApiServerCredential: WebApiServerCredential? {
+        get { Load().webApiServerCredential }
+        set { 
+            var config = Load()
+            config.webApiServerCredential = newValue
+            try? config.save()
+        }
+    }
+
+    private func Load() -> Config {
+        if let config = try? Config.load() {
+            return config
+        } else {
+            return Config()
+        }
     }
 }

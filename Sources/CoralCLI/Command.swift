@@ -5,9 +5,9 @@ func login() async throws {
     Coral.setLogLevel(.trace)
 
     let version = try await Coral.getVersion()
-    let coralSession = CoralSession(version: version)
+    let coralSession = CoralSession(version: version, storage: ConfigStorage())
 
-    var config = try? Config.load()
+    let config = try? Config.load()
     if config == nil {
         // Get codeVerifier and login link
         let loginAddress = coralSession.generateLoginAddress()
@@ -26,15 +26,11 @@ func login() async throws {
             }
         }
 
-        let sessionToken = try await coralSession.generateSessionToken(loginLink: loginLink!)
-
-        // Save to file
-        config = Config(sessionToken: sessionToken)
-        try config!.save()
+        try await coralSession.login(loginLink: loginLink!)
     }
 
-    let result = try await coralSession.login(sessionToken: config!.sessionToken)
-    print(result.webApiServerCredential.accessToken)
+    let gameServices = try await coralSession.getGameServices()
+    print(gameServices)
 }
 
 func clean() throws {

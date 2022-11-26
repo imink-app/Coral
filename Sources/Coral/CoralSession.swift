@@ -7,102 +7,121 @@ import InkMoya
 #endif
 
 public class CoralSession {
-    public var apiSession: IMSessionType = IMSession.shared
+    private var apiSession: IMSessionType
+    private var storage: CoralStorage
 
-    private var generatedCodeVerifier: String? = nil
-    public var coralAccessToken: String? = nil
+    private let version: String
 
-    private var meResult: MeResult!
+    private var codeVerifier: String? {
+        get { storage.codeVerifier }
+        set { storage.codeVerifier = newValue }
+    }
 
-    public init(version: String, sessionType: IMSessionType? = nil) {
+    private var sessionToken: String? {
+        get { storage.sessionToken }
+        set { storage.sessionToken = newValue }
+    }
+
+    private var webApiServerCredential: WebApiServerCredential? {
+        get { storage.webApiServerCredential }
+        set {
+            storage.webApiServerCredential = newValue
+            configureSession()
+        }
+    }
+
+    public init(version: String, storage: CoralStorage, sessionType: IMSessionType? = nil) {
+        self.version = version
+        self.storage = storage
+
         if let sessionType = sessionType {
             self.apiSession = sessionType
+        } else {
+            self.apiSession = IMSession.shared
         }
-        
-        self.apiSession.plugins = [LoginAuthPlugin(version: version)]
+
+        configureSession()
     }
 }
 
 extension CoralSession {
     public func generateLoginAddress() -> String {
-        generatedCodeVerifier = generateCodeVerifier()
-        logger.trace("codeVerifier: \(generatedCodeVerifier!)")
+        let codeVerifier = generateCodeVerifier()
+        logger.trace("codeVerifier: \(codeVerifier)")
 
-        let authorizeAPI = AuthAPI.authorize(codeVerifier: generatedCodeVerifier!)
+        let authorizeAPI = AuthAPI.authorize(codeVerifier: codeVerifier)
         logger.trace("loginAddress: \(authorizeAPI.url.absoluteString)")
+
+        self.codeVerifier = codeVerifier
 
         return authorizeAPI.url.absoluteString
     }
 
-    public func generateSessionToken(loginLink: String) async throws -> String {
-        guard let codeVerifier = generatedCodeVerifier else {
+    public func login(loginLink: String) async throws {
+        let sessionToken = try await generateSessionToken(loginLink: loginLink)
+        let loginResult = try await getLoginResult(sessionToken: sessionToken)
+
+        self.sessionToken = sessionToken
+
+        self.webApiServerCredential = loginResult.webApiServerCredential
+    }
+
+    public func getGameServices() async throws -> [GameService] {
+        try await auth {
+            let gameServicesResult: APIResult<[GameService]> = try await apiSession.requestHandleCoralError(api: CoralAPI.listWebService)
+            return gameServicesResult.result
+        }
+    }
+
+    public func getGameServiceToken(serviceId: Int64) async throws -> GameServiceToken {
+        try await auth {
+            guard let accessToken = webApiServerCredential?.accessToken else {
+                throw Error.loginRequired
+            }
+
+            let fResult = try await getF(token: accessToken, hashMethod: .hash2)
+
+            let getWebServiceTokenAPI = CoralAPI.getWebServiceToken(
+                serviceId: serviceId,
+                token: accessToken,
+                requestId: fResult.requestId,
+                timestamp: fResult.timestamp,
+                f: fResult.f)
+            let gameServiceTokenResult: APIResult<GameServiceToken> = try await apiSession.requestHandleCoralError(api: getWebServiceTokenAPI)
+            return gameServiceTokenResult.result
+        }
+    }
+}
+
+extension CoralSession {
+    private func configureSession() {
+        var plugins = [PluginType]()
+
+        plugins.append(LoginAuthPlugin(version: version))
+
+        if let webApiServerCredential = self.webApiServerCredential {
+            plugins.append(CoralTokenPlugin(token: webApiServerCredential.accessToken))
+        }
+
+        apiSession.plugins = plugins
+    }
+}
+
+extension CoralSession {
+    private func generateSessionToken(loginLink: String) async throws -> String {
+        guard let codeVerifier = storage.codeVerifier else {
             throw Error.codeVerifierIsNotGenerated
         }
 
         // Parse the login link and extract the SessionTokenCode
         let sessionTokenCode = try getSessionTokenCode(loginLink: loginLink)
 
-        return try await getSessionToken(sessionTokenCode: sessionTokenCode, codeVerifier: codeVerifier)
-    }
-    
-    public func login(sessionToken: String) async throws -> LoginResult {
-        let loginResult = try await getLoginResult(sessionToken: sessionToken)
-        coralAccessToken = loginResult.webApiServerCredential.accessToken
-        
-        var plugins = apiSession.plugins
-        plugins.removeAll { $0 is CoralTokenPlugin }
-        apiSession.plugins = plugins + [CoralTokenPlugin(token: coralAccessToken!)]
-        
-        return loginResult
-    }
-
-    public func getMe() throws -> MeResult {
-        if meResult == nil {
-            throw Error.loginRequired
-        }
-
-        return meResult
-    }
-
-    public func getGameServices() async throws -> [GameService] {
-        let (data, res) = try await apiSession.request(api: CoralAPI.listWebService)
-        if res.httpURLResponse.statusCode != 200 {
-            throw Error.error
-        }
-        let gameServicesResult = try data.decode(APIResult<[GameService]>.self)
-        return gameServicesResult.result
-    }
-
-    public func getGameServiceToken(serviceId: Int64) async throws -> GameServiceToken {
-        guard let coralAccessToken = coralAccessToken else {
-            throw Error.loginRequired
-        }
-
-        let fResult = try await getF(token: coralAccessToken, hashMethod: .hash2)
-
-        let getWebServiceTokenAPI = CoralAPI.getWebServiceToken(
-            serviceId: serviceId,
-            token: coralAccessToken,
-            requestId: fResult.requestId,
-            timestamp: fResult.timestamp,
-            f: fResult.f)
-        let (data, res) = try await apiSession.request(api: getWebServiceTokenAPI)
-        if res.httpURLResponse.statusCode != 200 {
-            throw Error.error
-        }
-        let gameServiceToken = try data.decode(APIResult<GameServiceToken>.self)
-        return gameServiceToken.result
-    }
-}
-
-extension CoralSession {
-    private func getSessionToken(sessionTokenCode: String, codeVerifier: String) async throws -> String {
         // Request SessionToken API
         let sessionTokenAPI = AuthAPI.sessionToken(
             codeVerifier: codeVerifier, sessionTokenCode: sessionTokenCode)
         let (data, res) = try await apiSession.request(api: sessionTokenAPI)
         if res.httpURLResponse.statusCode != 200 {
-            throw Error.error
+            throw Error.coralAPIUnknownError(msg: res.httpURLResponse.description)
         }
         let result = try data.decode(ConnectSessionTokenResult.self)
 
@@ -112,10 +131,9 @@ extension CoralSession {
     private func getLoginResult(sessionToken: String) async throws -> LoginResult {
         // 1.
         let tokenAPI = AuthAPI.token(sessionToken: sessionToken)
-        var (data, res) =
-            try await apiSession.request(api: tokenAPI)
+        var (data, res) = try await apiSession.request(api: tokenAPI)
         if res.httpURLResponse.statusCode != 200 {
-            throw Error.error
+            throw Error.coralAPIUnknownError(msg: res.httpURLResponse.description)
         }
         let connectTokenResult = try data.decode(ConnectTokenResult.self)
 
@@ -123,9 +141,9 @@ extension CoralSession {
         let meAPI = AuthAPI.me(accessToken: connectTokenResult.accessToken)
         (data, res) = try await apiSession.request(api: meAPI)
         if res.httpURLResponse.statusCode != 200 {
-            throw Error.error
+            throw Error.coralAPIUnknownError(msg: res.httpURLResponse.description)
         }
-        meResult = try data.decode(MeResult.self)
+        let meResult = try data.decode(MeResult.self)
 
         // 3.
         let fResult = try await getF(token: connectTokenResult.accessToken, hashMethod: .hash1)
@@ -140,12 +158,7 @@ extension CoralSession {
             timestamp: fResult.timestamp,
             f: fResult.f
         )
-        (data, res) = try await apiSession.request(api: loginAPI)
-        if res.httpURLResponse.statusCode != 200 {
-            throw Error.error
-        }
-        let loginResult = try data.decode(APIResult<LoginResult>.self)
-
+        let loginResult: APIResult<LoginResult> = try await apiSession.requestHandleCoralError(api: loginAPI)
         return loginResult.result
     }
 
@@ -153,7 +166,7 @@ extension CoralSession {
         let fAPI = InkAPI.f(accessToken: token, hashMethod: hashMethod)
         let (data, res) = try await apiSession.request(api: fAPI)
         if res.httpURLResponse.statusCode != 200 {
-            throw Error.error
+            throw Error.coralAPIUnknownError(msg: res.httpURLResponse.description)
         }
         let fResult = try data.decode(FResult.self)
         return fResult
@@ -182,11 +195,31 @@ extension CoralSession {
 }
 
 extension CoralSession {
+    func auth<T>(_ block: () async throws -> T) async throws -> T where T: Any {
+        guard let sessionToken = sessionToken, let _ = webApiServerCredential else {
+            throw Error.loginRequired
+        }
+
+        do {
+            return try await block()
+        } catch Error.coralAPIError {
+            webApiServerCredential = nil
+            let loginResult = try await getLoginResult(sessionToken: sessionToken)
+            self.webApiServerCredential = loginResult.webApiServerCredential
+
+            return try await block()
+        }
+    }
+}
+
+extension CoralSession {
     public enum Error: Swift.Error {
         case wrongLoginLink
         case codeVerifierIsNotGenerated
-        case error
-        case coralVersionNotFound
+        case sessionTokenNoExist
         case loginRequired
+
+        case coralAPIError(body: String)
+        case coralAPIUnknownError(msg: String)
     }
 }

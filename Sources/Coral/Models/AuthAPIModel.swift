@@ -20,7 +20,7 @@ struct ConnectTokenResult: Decodable {
 }
 
 struct APIResult<T: Decodable>: Decodable {
-    let status: Int64
+    let status: CoralAPIStatus
     let correlationId: String
     let result: T
 }
