@@ -40,23 +40,35 @@ extension Config {
     }
 }
 
-struct ConfigStorage: CoralStorage {
+class ConfigStorage: CoralStorage {
     var codeVerifier: String?
-    var sessionToken: String? {
-        get { Load().sessionToken }
-        set { 
-            var config = Load()
-            config.sessionToken = newValue
-            try? config.save()
-        }
+
+    func getCodeVerifier() async throws -> String? {
+        codeVerifier
     }
-    var webApiServerCredential: WebApiServerCredential? {
-        get { Load().webApiServerCredential }
-        set { 
-            var config = Load()
-            config.webApiServerCredential = newValue
-            try? config.save()
-        }
+
+    func setCodeVerifier(_ newValue: String?) async throws {
+        codeVerifier = newValue
+    }
+
+    func getSessionToken() async throws -> String? {
+        Load().sessionToken
+    }
+
+    func setSessionToken(_ newValue: String?) async throws {
+        var config = Load()
+        config.sessionToken = newValue
+        try? config.save()
+    }
+
+    func getWebApiServerCredential() async throws -> WebApiServerCredential? {
+        Load().webApiServerCredential 
+    }
+
+    func setWebApiServerCredential(_ newValue: WebApiServerCredential?) async throws {
+        var config = Load()
+        config.webApiServerCredential = newValue
+        try? config.save()
     }
 
     private func Load() -> Config {

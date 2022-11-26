@@ -12,25 +12,7 @@ public class CoralSession {
 
     private let version: String
 
-    private var codeVerifier: String? {
-        get { storage.codeVerifier }
-        set { storage.codeVerifier = newValue }
-    }
-
-    private var sessionToken: String? {
-        get { storage.sessionToken }
-        set { storage.sessionToken = newValue }
-    }
-
-    private var webApiServerCredential: WebApiServerCredential? {
-        get { storage.webApiServerCredential }
-        set {
-            storage.webApiServerCredential = newValue
-            configureSession()
-        }
-    }
-
-    public init(version: String, storage: CoralStorage, sessionType: IMSessionType? = nil) {
+    public init(version: String, storage: CoralStorage, sessionType: IMSessionType? = nil) async throws {
         self.version = version
         self.storage = storage
 
@@ -40,19 +22,19 @@ public class CoralSession {
             self.apiSession = IMSession.shared
         }
 
-        configureSession()
+        try await configureSession()
     }
 }
 
 extension CoralSession {
-    public func generateLoginAddress() -> String {
+    public func generateLoginAddress() async throws -> String {
         let codeVerifier = generateCodeVerifier()
         logger.trace("codeVerifier: \(codeVerifier)")
 
         let authorizeAPI = AuthAPI.authorize(codeVerifier: codeVerifier)
         logger.trace("loginAddress: \(authorizeAPI.url.absoluteString)")
 
-        self.codeVerifier = codeVerifier
+        try await storage.setCodeVerifier(codeVerifier)
 
         return authorizeAPI.url.absoluteString
     }
@@ -61,9 +43,10 @@ extension CoralSession {
         let sessionToken = try await generateSessionToken(loginLink: loginLink)
         let loginResult = try await getLoginResult(sessionToken: sessionToken)
 
-        self.sessionToken = sessionToken
+        try await storage.setSessionToken(sessionToken)
 
-        self.webApiServerCredential = loginResult.webApiServerCredential
+        try await storage.setWebApiServerCredential(loginResult.webApiServerCredential)
+        try await configureSession()
     }
 
     public func getGameServices() async throws -> [GameService] {
@@ -75,7 +58,7 @@ extension CoralSession {
 
     public func getGameServiceToken(serviceId: Int64) async throws -> GameServiceToken {
         try await auth {
-            guard let accessToken = webApiServerCredential?.accessToken else {
+            guard let accessToken = try await storage.getWebApiServerCredential()?.accessToken else {
                 throw Error.loginRequired
             }
 
@@ -94,12 +77,12 @@ extension CoralSession {
 }
 
 extension CoralSession {
-    private func configureSession() {
+    private func configureSession() async throws {
         var plugins = [PluginType]()
 
         plugins.append(LoginAuthPlugin(version: version))
 
-        if let webApiServerCredential = self.webApiServerCredential {
+        if let webApiServerCredential = try await storage.getWebApiServerCredential() {
             plugins.append(CoralTokenPlugin(token: webApiServerCredential.accessToken))
         }
 
@@ -109,7 +92,7 @@ extension CoralSession {
 
 extension CoralSession {
     private func generateSessionToken(loginLink: String) async throws -> String {
-        guard let codeVerifier = storage.codeVerifier else {
+        guard let codeVerifier = try await storage.getCodeVerifier() else {
             throw Error.codeVerifierIsNotGenerated
         }
 
@@ -196,16 +179,26 @@ extension CoralSession {
 
 extension CoralSession {
     func auth<T>(_ block: () async throws -> T) async throws -> T where T: Any {
-        guard let sessionToken = sessionToken, let _ = webApiServerCredential else {
+        guard let sessionToken = try await storage.getSessionToken() else {
             throw Error.loginRequired
+        }
+
+        if try await storage.getWebApiServerCredential() == nil {
+            let loginResult = try await getLoginResult(sessionToken: sessionToken)
+            try await storage.setWebApiServerCredential(loginResult.webApiServerCredential)
+            try await configureSession()
         }
 
         do {
             return try await block()
         } catch Error.coralAPIError {
-            webApiServerCredential = nil
+            try await storage.setWebApiServerCredential(nil)
+            try await configureSession()
+
             let loginResult = try await getLoginResult(sessionToken: sessionToken)
-            self.webApiServerCredential = loginResult.webApiServerCredential
+
+            try await storage.setWebApiServerCredential(loginResult.webApiServerCredential)
+            try await configureSession()
 
             return try await block()
         }

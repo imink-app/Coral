@@ -3,22 +3,14 @@ import XCTest
 @testable import Coral
 @testable import InkMoya
 
-struct MemoryStorage: CoralStorage {
-    var codeVerifier: String?
-
-    var sessionToken: String?
-
-    var webApiServerCredential: WebApiServerCredential?
-}
-
 final class CoralTests: XCTestCase {
     func testMockData() async throws {
         // Coral.setLogLevel(.trace)
 
         let version = try await Coral.getVersion()
-        let coralSession: CoralSession = CoralSession(version: version, storage: MemoryStorage(), sessionType: IMSessionMock())
+        let coralSession: CoralSession = try await CoralSession(version: version, storage: MemoryStorage(), sessionType: IMSessionMock())
 
-        let loginAddress = coralSession.generateLoginAddress()
+        let loginAddress = try await coralSession.generateLoginAddress()
         XCTAssertNotEqual(loginAddress, "")
 
         let sampleLoginLink = "npf71b963c1b7b6d119://auth#session_state=588baa56d8da004e6aed401319055bb602e49879e686de236f72c8aa72ce439a&session_token_code=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FjY291bnRzLm5pbnRlbmRvLmNvbSIsInR5cCI6InNlc3Npb25fdG9rZW5fY29kZSIsInN1YiI6IjVmMmNkYTkyYWQ5NmM0ZmEiLCJleHAiOjE2NjQyNjQyNjUsInN0YzpzY3AiOlswLDgsOSwxNywyM10sInN0YzptIjoiUzI1NiIsImlhdCI6MTY2NDI2MzY2NSwianRpIjoiNjIxODg4NzYzNjciLCJhdWQiOiI3MWI5NjNjMWI3YjZkMTE5Iiwic3RjOmMiOiJzdUp4Q3FtdFhGLWtMZGRrSm9EY1RqVFVPX2FSeVhGRDFLbFJnNW53dnpjIn0.0cY9HEeQ44rVJeoYPTUQlSktJhjxr1vNbtDqJcuYG_A&state=XIUHxjgpTSzm2DHIp7b4fXM1-BFyya3easS81IFgS4VGVTB9"
