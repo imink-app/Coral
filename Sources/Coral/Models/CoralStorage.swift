@@ -1,4 +1,4 @@
-public protocol CoralStorage {
+public protocol CoralAuthorizationStorage {
     func getCodeVerifier() async throws -> String?
     func setCodeVerifier(_ newValue: String?) async throws
 

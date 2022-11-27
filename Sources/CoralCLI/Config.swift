@@ -40,7 +40,7 @@ extension Config {
     }
 }
 
-class ConfigStorage: CoralStorage {
+class AuthorizationFileStorage: CoralAuthorizationStorage {
     var codeVerifier: String?
 
     func getCodeVerifier() async throws -> String? {

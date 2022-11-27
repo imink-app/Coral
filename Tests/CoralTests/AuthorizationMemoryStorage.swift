@@ -1,6 +1,6 @@
 @testable import Coral
 
-class MemoryStorage: CoralStorage {
+class AuthorizationMemoryStorage: CoralAuthorizationStorage {
     var codeVerifier: String?
     var sessionToken: String?
     var webApiServerCredential: WebApiServerCredential?

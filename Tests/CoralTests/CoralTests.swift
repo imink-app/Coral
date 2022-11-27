@@ -8,7 +8,7 @@ final class CoralTests: XCTestCase {
         // Coral.setLogLevel(.trace)
 
         let version = try await Coral.getVersion()
-        let coralSession: CoralSession = try await CoralSession(version: version, storage: MemoryStorage(), sessionType: IMSessionMock())
+        let coralSession: CoralSession = try await CoralSession(version: version, authorizationStorage: AuthorizationMemoryStorage(), sessionType: IMSessionMock())
 
         let loginAddress = try await coralSession.generateLoginAddress()
         XCTAssertNotEqual(loginAddress, "")

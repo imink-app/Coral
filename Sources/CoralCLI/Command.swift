@@ -5,7 +5,7 @@ func login() async throws {
     Coral.setLogLevel(.trace)
 
     let version = try await Coral.getVersion()
-    let coralSession = try await CoralSession(version: version, storage: ConfigStorage())
+    let coralSession = try await CoralSession(version: version, authorizationStorage: AuthorizationFileStorage())
 
     let config = try? Config.load()
     if config == nil {
