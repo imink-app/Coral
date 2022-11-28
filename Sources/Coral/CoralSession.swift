@@ -43,7 +43,7 @@ extension CoralSession {
         return authorizeAPI.url.absoluteString
     }
 
-    public func login(loginLink: String) async throws {
+    public func login(loginLink: String) async throws -> User {
         let sessionToken = try await generateSessionToken(loginLink: loginLink)
         let loginResult = try await getLoginResult(sessionToken: sessionToken)
 
@@ -51,6 +51,8 @@ extension CoralSession {
 
         try await internalAuthorizationStorage.setWebApiServerCredential(loginResult.webApiServerCredential)
         try await configureSession()
+
+        return loginResult.user
     }
 
     public func getGameServices() async throws -> [GameService] {
