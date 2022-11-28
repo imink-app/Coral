@@ -8,13 +8,17 @@ import InkMoya
 
 public class CoralSession {
     private var apiSession: IMSessionType
-    private let authorizationStorage: CoralAuthorizationStorage
+    private let internalAuthorizationStorage: CoralAuthorizationStorage
 
     private let version: String
 
-    public init(version: String, authorizationStorage: CoralAuthorizationStorage, sessionType: IMSessionType? = nil) async throws {
+    public var authorizationStorage: CoralAuthorizationStorage {
+        internalAuthorizationStorage
+    }
+
+    public init(version: String, authorizationStorage: CoralAuthorizationStorage = AuthorizationMemoryStorage(), sessionType: IMSessionType? = nil) async throws {
         self.version = version
-        self.authorizationStorage = authorizationStorage
+        self.internalAuthorizationStorage = authorizationStorage
 
         if let sessionType = sessionType {
             self.apiSession = sessionType
@@ -34,7 +38,7 @@ extension CoralSession {
         let authorizeAPI = AuthAPI.authorize(codeVerifier: codeVerifier)
         logger.trace("loginAddress: \(authorizeAPI.url.absoluteString)")
 
-        try await authorizationStorage.setCodeVerifier(codeVerifier)
+        try await internalAuthorizationStorage.setCodeVerifier(codeVerifier)
 
         return authorizeAPI.url.absoluteString
     }
@@ -43,9 +47,9 @@ extension CoralSession {
         let sessionToken = try await generateSessionToken(loginLink: loginLink)
         let loginResult = try await getLoginResult(sessionToken: sessionToken)
 
-        try await authorizationStorage.setSessionToken(sessionToken)
+        try await internalAuthorizationStorage.setSessionToken(sessionToken)
 
-        try await authorizationStorage.setWebApiServerCredential(loginResult.webApiServerCredential)
+        try await internalAuthorizationStorage.setWebApiServerCredential(loginResult.webApiServerCredential)
         try await configureSession()
     }
 
@@ -58,7 +62,7 @@ extension CoralSession {
 
     public func getGameServiceToken(serviceId: Int64) async throws -> GameServiceToken {
         try await auth {
-            guard let accessToken = try await authorizationStorage.getWebApiServerCredential()?.accessToken else {
+            guard let accessToken = try await internalAuthorizationStorage.getWebApiServerCredential()?.accessToken else {
                 throw Error.loginRequired
             }
 
@@ -82,7 +86,7 @@ extension CoralSession {
 
         plugins.append(LoginAuthPlugin(version: version))
 
-        if let webApiServerCredential = try await authorizationStorage.getWebApiServerCredential() {
+        if let webApiServerCredential = try await internalAuthorizationStorage.getWebApiServerCredential() {
             plugins.append(CoralTokenPlugin(token: webApiServerCredential.accessToken))
         }
 
@@ -92,7 +96,7 @@ extension CoralSession {
 
 extension CoralSession {
     private func generateSessionToken(loginLink: String) async throws -> String {
-        guard let codeVerifier = try await authorizationStorage.getCodeVerifier() else {
+        guard let codeVerifier = try await internalAuthorizationStorage.getCodeVerifier() else {
             throw Error.generateLoginAddressRequired
         }
 
@@ -179,25 +183,25 @@ extension CoralSession {
 
 extension CoralSession {
     func auth<T>(_ block: () async throws -> T) async throws -> T where T: Any {
-        guard let sessionToken = try await authorizationStorage.getSessionToken() else {
+        guard let sessionToken = try await internalAuthorizationStorage.getSessionToken() else {
             throw Error.loginRequired
         }
 
-        if try await authorizationStorage.getWebApiServerCredential() == nil {
+        if try await internalAuthorizationStorage.getWebApiServerCredential() == nil {
             let loginResult = try await getLoginResult(sessionToken: sessionToken)
-            try await authorizationStorage.setWebApiServerCredential(loginResult.webApiServerCredential)
+            try await internalAuthorizationStorage.setWebApiServerCredential(loginResult.webApiServerCredential)
             try await configureSession()
         }
 
         do {
             return try await block()
         } catch AuthError.tokenExpired, AuthError.invalidToken {
-            try await authorizationStorage.setWebApiServerCredential(nil)
+            try await internalAuthorizationStorage.setWebApiServerCredential(nil)
             try await configureSession()
             
             let loginResult = try await getLoginResult(sessionToken: sessionToken)
 
-            try await authorizationStorage.setWebApiServerCredential(loginResult.webApiServerCredential)
+            try await internalAuthorizationStorage.setWebApiServerCredential(loginResult.webApiServerCredential)
             try await configureSession()
 
             return try await block()
