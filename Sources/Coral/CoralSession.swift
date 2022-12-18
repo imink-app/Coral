@@ -109,8 +109,8 @@ extension CoralSession {
         let sessionTokenAPI = AuthAPI.sessionToken(
             codeVerifier: codeVerifier, sessionTokenCode: sessionTokenCode)
         let (data, res) = try await apiSession.request(api: sessionTokenAPI)
-        if res.httpURLResponse.statusCode != 200 {
-            throw Error.coralAPIError(msg: res.httpURLResponse.description)
+        if res.statusCode != 200 {
+            throw Error.coralAPIError(msg: res.description)
         }
         let result = try data.decode(ConnectSessionTokenResult.self)
 
@@ -121,7 +121,7 @@ extension CoralSession {
         // 1.
         let tokenAPI = AuthAPI.token(sessionToken: sessionToken)
         var (data, res) = try await apiSession.request(api: tokenAPI)
-        if res.httpURLResponse.statusCode != 200 {
+        if res.statusCode != 200 {
             throw Error.invalidSessionToken
         }
         let connectTokenResult = try data.decode(ConnectTokenResult.self)
@@ -129,8 +129,8 @@ extension CoralSession {
         // 2.
         let meAPI = AuthAPI.me(accessToken: connectTokenResult.accessToken)
         (data, res) = try await apiSession.request(api: meAPI)
-        if res.httpURLResponse.statusCode != 200 {
-            throw Error.coralAPIError(msg: res.httpURLResponse.description)
+        if res.statusCode != 200 {
+            throw Error.coralAPIError(msg: res.description)
         }
         let meResult = try data.decode(MeResult.self)
 
@@ -154,8 +154,8 @@ extension CoralSession {
     private func getF(token: String, hashMethod: InkAPI.HashMethod) async throws -> FResult {
         let fAPI = InkAPI.f(accessToken: token, hashMethod: hashMethod)
         let (data, res) = try await apiSession.request(api: fAPI)
-        if res.httpURLResponse.statusCode != 200 {
-            throw Error.coralAPIError(msg: res.httpURLResponse.description)
+        if res.statusCode != 200 {
+            throw Error.coralAPIError(msg: res.description)
         }
         let fResult = try data.decode(FResult.self)
         return fResult

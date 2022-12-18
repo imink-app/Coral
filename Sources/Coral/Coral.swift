@@ -16,13 +16,12 @@ extension Coral {
 
     public static func setLogLevel(_ logLevel: LogLevel) {
         Coral.logLevel = logLevel
-        InkMoya.setLogLevel(logLevel)
     }
     
     public static func getVersion() async throws -> String {
         let apiSession = IMSession.shared
         let (data, res) = try await apiSession.request(api: AuthAPI.nsoLookup)
-        if res.httpURLResponse.statusCode != 200 {
+        if res.statusCode != 200 {
             throw Error.error
         }
         let lookupResult = try data.decode(LookupResult.self)
