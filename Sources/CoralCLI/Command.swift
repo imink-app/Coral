@@ -26,7 +26,7 @@ func login() async throws {
             }
         }
 
-        try await coralSession.login(loginLink: loginLink!)
+        _ = try await coralSession.login(loginLink: loginLink!)
     }
 
     let gameServices = try await coralSession.getGameServices()

@@ -17,7 +17,7 @@ final class CoralTests: XCTestCase {
         // let sessionToken = try await coralSession.generateSessionToken(loginLink: sampleLoginLink)
         // XCTAssertEqual(sessionToken, "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MTFlOWIxOTA1OGUwODRlIiwic3Q6c2NwIjpbMCw4LDksMTcsMjNdLCJleHAiOjE3MjM4NjIyNTQsImp0aSI6OTU2MDMwNDQ1NCwidHlwIjoic2Vzc2lvbl90b2tlbiIsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMubmludGVuZG8uY29tIiwiaWF0IjoxNjYwNzkwMjU0LCJhdWQiOiI3MWI5NjNjMWI3YjZkMTE5In0.s_oX7uHqKVAQdhc5KNzEu3cbiZ5nD3OeuxxwLuNNhB4")
 
-        try await coralSession.login(loginLink: sampleLoginLink)
+        _ = try await coralSession.login(loginLink: sampleLoginLink)
         // XCTAssertEqual(loginResult.webApiServerCredential.accessToken, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsIm1lbWJlcnNoaXAiOnsiYWN0aXZlIjp0cnVlfSwiYXVkIjoiZjQxN2UxdGlianFkOTFjaDk5dTQ5aXd6NXNuOWNoeTMiLCJleHAiOjE2NjA3OTc0NjEsImlhdCI6MTY2MDc5MDI2MSwiaXNzIjoiYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldCIsInN1YiI6NTA4MjM0MjQ3NzUyOTA4OCwidHlwIjoiaWRfdG9rZW4ifQ.dvnyD1VErTINIwiJsi-HjnRyJiJNrW4aT7Au9zTcnZ8")
 
         let splatoon3ServiceId: Int64 = 4834290508791808
